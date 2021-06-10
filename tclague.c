@@ -38,7 +38,7 @@ Complex CZERO;
 //*** Utility functions for complex numbers ***
 
 // absolute value of z
-double CABS(Complex z) {
+double CABS(const Complex z) {
     double XX,YY,X,Y,W;
     XX=z[0]; YY=z[1];
     X=fabs(XX);
@@ -59,18 +59,18 @@ double CABS(Complex z) {
 }
 
 // z3=z1+z2
-void CADD(Complex z1, Complex z2, Complex z3) {
+void CADD(const Complex z1, const Complex z2, Complex z3) {
     z3[0]=z1[0]+z2[0];
     z3[1]=z1[1]+z2[1];
 }
 
 // let z1=z
-void CAssign(Complex z, Complex z1) {
+void CAssign(const Complex z, Complex z1) {
     z1[0]=z[0]; z1[1]=z[1];
 }
 
 // Z=Z1/Z2
-void CDIV(Complex Z1, Complex Z2, Complex Z) {
+void CDIV(const Complex Z1, const Complex Z2, Complex Z) {
     double D;
     D=Z2[0]*Z2[0]+Z2[1]*Z2[1];
     if (D<1e-12) return;
@@ -79,7 +79,7 @@ void CDIV(Complex Z1, Complex Z2, Complex Z) {
 }
 
 // Z=Z1*Z2
-void CMUL(Complex Z1, Complex Z2, Complex Z) {
+void CMUL(const Complex Z1, const Complex Z2, Complex Z) {
     Z[0]=Z1[0]*Z2[0] - Z1[1]*Z2[1];
     Z[1]=Z1[0]*Z2[1] + Z1[1]*Z2[0];
 }
@@ -90,11 +90,11 @@ void CMPLX(Complex z, double x, double y) {
 }
 
 //print a complex number
-void CPrint(Complex z) {
+void CPrint(const Complex z) {
     printf(" (%f,%f)\n", z[0], z[1]);
 }
 
-void CSQRT(Complex z, Complex z1) {
+void CSQRT(const Complex z, Complex z1) {
     //  SQUARE ROOT OF A COMPLEX NUMBER  A+I*B = SQRT(X+I*Y)
     double X,Y,A,B;
     X=z[0]; Y=z[1];
@@ -118,7 +118,7 @@ void CSQRT(Complex z, Complex z1) {
 }
 
 // z3=z1-z2
-void CSUB(Complex z1, Complex z2, Complex z3) {
+void CSUB(const Complex z1, const Complex z2, Complex z3) {
     z3[0]=z1[0]-z2[0];
     z3[1]=z1[1]-z2[1];
 }
