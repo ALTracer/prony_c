@@ -29,11 +29,6 @@
 
 typedef double Complex[2];
 
-Complex A[NMAX], RAC[NMAX], W1[NMAX], W2[NMAX], W3[NMAX]; //tables of complex numbers
-int I, IMP, ITMAX, N;
-double EPS,EPS2;
-Complex CZERO;
-
 
 //*** Utility functions for complex numbers ***
 
@@ -253,10 +248,14 @@ e4:   //X[N]=-B[1]/B[0]
     X[N][1]=-X[N][1];
 
 }
-
+//#define TCLAGUE_MAIN
 #ifdef TCLAGUE_MAIN
 int main() {
 
+    Complex A[NMAX], RAC[NMAX], W1[NMAX], W2[NMAX], W3[NMAX]; //tables of complex numbers
+    int I, IMP, ITMAX, N;
+    double EPS,EPS2;
+    Complex CZERO;
     CMPLX(CZERO,0.0,0.0);
 
     // Example #1
