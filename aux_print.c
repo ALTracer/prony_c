@@ -56,7 +56,7 @@ void print_alpha_freq(const _Dcomplex * z, size_t len){
     for (k=0; k<len; k++){
         alpha = log(cabs(z[k]))/Ts;
         freq = atan(cimag(z[k])/creal(z[k]))/(2*M_PI*Ts);
-        printf("[%zu]: alpha = %.3f, freq = %.3f\n", k, alpha, freq);
+        printf("[%lld]: alpha = %.3f, freq = %.3f\n", k, alpha, freq);
     }
     return;
 }

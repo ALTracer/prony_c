@@ -36,7 +36,7 @@ void compose_matrix1(double * signal, size_t len, myArray_t M, size_t mla, size_
             M[a][b] = signal[idx];
         }
     }
-    printf("Matrix 1 (%zu x %zu):\n", mla, mlb);
+    printf("Matrix 1 (%lld x %lld):\n", mla, mlb);
     print_matrix(M, mla, mlb);
     return;
 }
@@ -76,7 +76,7 @@ int main()
     signal = calloc(len,sizeof(double));
 
     compose_test_signal(signal, len);
-    printf("Input signal (%zu points):\n", len);
+    printf("Input signal (%lld points):\n", len);
     print_vector(signal, len);
 
 /*    for (size_t i = 0; i < len-M_ORDER; i++) { */
@@ -201,7 +201,7 @@ int polyroots(const double * polycoeffs, size_t order, _Dcomplex * roots) {
         roots[k] = _Cbuild(Z[k][0], Z[k][1]);
     }
     free(Z);
-    printf("Vector 3: z (%zu complex roots):\n", order);
+    printf("Vector 3: z (%lld complex roots):\n", order);
     print_vector_c(roots, order);
     return status;
 }
