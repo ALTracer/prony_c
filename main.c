@@ -8,8 +8,9 @@
 #define __STDC_WANT_LIB_EXT1__ 1
 #include <string.h> //memcpy_s
 
-#ifdef USE_LAPACKE
-#include <mkl_lapacke.h>
+#if __has_include(<mkl_lapacke.h>)
+    #include <mkl_lapacke.h>
+    #define USE_LAPACKE
 #endif
 
 // Signal storage
